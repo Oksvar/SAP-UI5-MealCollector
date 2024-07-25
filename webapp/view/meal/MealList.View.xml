@@ -1,0 +1,48 @@
+<mvc:View xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc"
+    controllerName="sap.ui.demo.nav.controller.meal.MealList">
+    <Page title="{i18n>Title.meals}" floatingFooter="true" enableScrolling="false" showNavButton="true" navButtonPress="onNavBack">
+        <Table items="{/meals}" width="auto" class="sapUxAPObjectPageSubSectionAlignContent">
+            <headerToolbar>
+                <Toolbar>
+                    <ToolbarSpacer></ToolbarSpacer>
+                    <Button icon="sap-icon://add" press="handleAddMeal" text="Add meal"></Button>
+                </Toolbar>
+            </headerToolbar>
+            <columns>
+                <Column>
+                    <Text text="Id" />
+                </Column>
+                <Column>
+                    <Text text="{i18n>Name}" />
+                </Column>
+                <Column>
+                    <Text text="{i18n>Description}" />
+                </Column>
+                <Column>
+                    <Text text="{i18n>Ingredients}" />
+                </Column>
+                <Column width="80px">
+                  <Text text="{i18n>Actions}" />
+              </Column>
+            </columns>
+            <items>
+                <ColumnListItem>
+                    <cells>
+                        <ObjectIdentifier title="{id}"/>
+                        <Text text="{name}" />
+                        <Text text="{description}" />
+                        <VBox>
+                            <items>
+                                <Text text="{ingredientString}" wrapping="true" />
+                            </items>
+                        </VBox>
+                        <HBox justifyContent="End">
+                            <Button icon="sap-icon://edit" press="handleEditMeal"></Button>
+                            <Button icon="sap-icon://delete" press="handleDeleteMeal"></Button>
+                        </HBox>
+                    </cells>
+                </ColumnListItem>
+            </items>
+        </Table>
+    </Page>
+</mvc:View>

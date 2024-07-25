@@ -1,0 +1,7 @@
+<mvc:View xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns:uxap="sap.uxap"
+  xmlns:controls="cc.ase.poker.table.controls" controllerName="cc.ase.poker.table.controller.view2"
+  displayBlock="true">
+<Shell>
+  <App id="view2"> 
+  </App></Shell>
+</mvc:View>

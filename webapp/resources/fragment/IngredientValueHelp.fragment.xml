@@ -1,0 +1,55 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core">
+	<TableSelectDialog
+		noDataText="No Ingredients Found"
+		title="Select Ingredients"
+		search=".handleSearch"
+		confirm=".handleValueHelpClose"
+		cancel=".handleValueHelpClose"
+		showClearButton="true"
+		items="{
+			path : '/IngredientList',
+			sorter : {
+				path : 'Name',
+				descending : false
+			}
+		}">
+
+		<!-- <Label text="Name"/>
+		<Input value="{/name}" placeholder="Meal name" />
+		<Label text="Description"/>
+		<Input value="{/description}" placeholder="Meal description" />
+		<Label text="Measurement"/>
+		<Input value="{/measureMent}" placeholder="Ingredient measurement" />
+		<Label text=""/> -->
+		<ColumnListItem selected="{selected}">
+			<cells>
+				<ObjectIdentifier title="{id}"/>
+                <Text text="{name}" />
+                <Text text="{description}" />
+                <Text text="{measureMent}" />
+			</cells>
+		</ColumnListItem>
+		<columns>
+			<Column width="12em">
+				<header>
+					<Text text="Name" />
+				</header>
+			</Column>
+			<Column minScreenWidth="Tablet" demandPopin="true">
+				<header>
+					<Text text="Description" />
+				</header>
+			</Column>
+			<Column
+				minScreenWidth="Desktop"
+				demandPopin="true"
+				hAlign="End">
+				<header>
+					<Text text="Measurement" />
+				</header>
+			</Column>
+		</columns>
+	</TableSelectDialog>
+</core:FragmentDefinition>

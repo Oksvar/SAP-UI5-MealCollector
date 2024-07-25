@@ -1,0 +1,130 @@
+{
+	"_version": "1.21.0",
+	"sap.app": {
+		"id": "sap.ui.demo.nav",
+		"type": "application",
+		"i18n": {
+			"bundleUrl": "i18n/i18n.properties",
+			"supportedLocales": [
+				""
+			],
+			"fallbackLocale": ""
+		},
+		"title": "{{appTitle}}",
+		"description": "{{appDescription}}",
+		"applicationVersion": {
+			"version": "1.0.0"
+		}
+	},
+	"sap.ui": {
+		"technology": "UI5",
+		"deviceTypes": {
+			"desktop": true,
+			"tablet": true,
+			"phone": true
+		}
+  	},
+	"sap.ui5": {
+		"rootView": {
+			"viewName": "sap.ui.demo.nav.view.App",
+			"type": "XML",
+			"async": true,
+			"id": "app"
+		},
+		"contentDensities": {
+			"compact": true,
+			"cozy": true
+		},
+		"dependencies": {
+			"minUI5Version": "1.98.0",
+			"libs": {
+				"sap.m": {},
+				"sap.ui.core": {}
+			}
+		},
+		"models": {
+			"i18n": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"settings": {
+					"bundleName": "sap.ui.demo.nav.i18n.i18n",
+					"supportedLocales": [
+						""
+					],
+					"fallbackLocale": ""
+				}
+			}
+		},
+		"routing": {
+			"config": {
+				"routerClass": "sap.m.routing.Router",
+				"type": "View",
+				"viewType": "XML",
+				"path": "sap.ui.demo.nav.view",
+				"controlId": "app",
+				"controlAggregation": "pages",
+				"transition": "slide",
+				"bypassed": {
+					"target": "notFound"
+				},
+				"async": true
+			},
+			"routes": [{
+				"pattern": "",
+				"name": "appHome",
+				"target": "home"
+			}, {
+				"pattern": "employees",
+				"name": "employeeList",
+				"target": "employees"
+			}, {
+				"pattern": "meals",
+				"name": "mealList",
+				"target": "meals"
+			}, {
+				"pattern": "ingredients",
+				"name": "ingredientList",
+				"target": "ingredients"
+			}, {
+				"pattern": "mealPlans",
+				"name": "mealPlanList",
+				"target": "mealPlans"
+			}],
+			"targets": {
+				"home": {
+					"id": "home",
+					"name": "Home",
+					"level" : 1
+				},
+				"notFound": {
+					"id": "notFound",
+					"name": "NotFound",
+					"transition": "show"
+				},
+				"employees": {
+					"id": "employeeList",
+					"path": "sap.ui.demo.nav.view.employee",
+					"name": "EmployeeList",
+					"level" : 2
+				},
+				"meals": {
+					"id": "mealList",
+					"path": "sap.ui.demo.nav.view.meal",
+					"name": "MealList",
+					"level" : 2
+				},
+				"ingredients": {
+					"id": "ingredientList",
+					"path": "sap.ui.demo.nav.view.ingredient",
+					"name": "IngredientList",
+					"level" : 2
+				},
+				"mealPlans": {
+					"id": "mealPlanList",
+					"path": "sap.ui.demo.nav.view.mealplan",
+					"name": "MealPlanList",
+					"level" : 2
+				}
+			}
+		}
+	}
+}

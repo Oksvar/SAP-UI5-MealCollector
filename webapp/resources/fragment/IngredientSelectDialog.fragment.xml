@@ -1,0 +1,37 @@
+<core:FragmentDefinition
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core">
+    <TableSelectDialog
+        id="ingredientDialog"
+        title="Select Ingredients"
+        search=".handleIngredientSearch"
+        confirm=".handleIngredientSelect"
+        cancel=".handleIngredientCancel"
+        multiSelect="true"
+        items="{ingredients>/ingredients}">
+        <columns>
+            <Column>
+                <Text text="ID" />
+            </Column>
+            <Column>
+                <Text text="Name" />
+            </Column>
+            <Column>
+                <Text text="Description" />
+            </Column>
+            <Column>
+                <Text text="Measurement" />
+            </Column>
+        </columns>
+        <items>
+            <ColumnListItem>
+                <cells>
+                    <Text text="{ingredients>id}" />
+                    <Text text="{ingredients>name}" />
+                    <Text text="{ingredients>description}" />
+                    <Text text="{ingredients>measureMent}" />
+                </cells>
+            </ColumnListItem>
+        </items>
+    </TableSelectDialog>
+</core:FragmentDefinition>

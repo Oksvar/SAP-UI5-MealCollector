@@ -1,0 +1,28 @@
+<core:FragmentDefinition xmlns="sap.m"
+    xmlns:core="sap.ui.core" xmlns:c="sap.ui.core" xmlns:l="sap.ui.layout"
+    xmlns:f="sap.ui.layout.form" xmlns:ui="sap.ui"
+    xmlns:app="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
+    <Dialog>
+        <f:SimpleForm id="idAddMealForm"
+            maxContainerCols="2" editable="true" layout="ResponsiveGridLayout"
+            title="Add Meal Form" labelSpanL="2" labelSpanM="2" emptySpanL="0"
+            emptySpanM="0" columnsL="1" columnsM="1" class="editableForm">
+            <f:content>
+                <core:Icon src="sap-icon://nutrition-activity" size="2em"></core:Icon>
+                <Label text="Name"/>
+                <Input value="{/name}" placeholder="Meal name" />
+                <Label text="Description"/>
+                <Input value="{/description}" placeholder="Meal description" />
+                <Button text="Select Ingredients" press=".handleTableSelectDialogPress" />
+                <Label text=""/>
+
+                
+                <VBox id="ingredientListBox" width="100%"></VBox>
+
+                <Label text=""/>
+                <Button icon="sap-icon://add" text="Save" type="Accept" press="handleSaveBtnPress"></Button>
+                <Button icon="sap-icon://delete" text="Cancel" type="Reject" press="handleCancelBtnPress"></Button>
+            </f:content>
+        </f:SimpleForm>
+    </Dialog>
+</core:FragmentDefinition>

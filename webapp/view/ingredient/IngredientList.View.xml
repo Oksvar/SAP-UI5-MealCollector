@@ -1,0 +1,45 @@
+<mvc:View xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc"
+controllerName="sap.ui.demo.nav.controller.ingredient.IngredientList">
+      <Page title="{i18n>Title.Ingredients}" floatingFooter="true" enableScrolling="false" showNavButton="true" navButtonPress="onNavBack">
+        <Table items="{/ingredients}" width="auto" class="sapUxAPObjectPageSubSectionAlignContent">
+          <headerToolbar>
+            <Toolbar>
+              <ToolbarSpacer></ToolbarSpacer>
+              <Button icon="sap-icon://add" press="handleAddIngredient" text="Add ingredient"></Button>
+            </Toolbar>
+          </headerToolbar>
+          <columns>
+            <Column>
+              <Text text="Id" />
+            </Column>
+            <Column>
+              <Text text="{i18n>Name}" />
+            </Column>
+            <Column>
+              <Text text="{i18n>Description}" />
+            </Column>
+            <Column>
+              <Text text="{i18n>Measurement}" />
+            </Column>
+            <Column width="80px">
+              <Text text="{i18n>Actions}" />
+            </Column>
+          </columns>
+          <items>
+            <ColumnListItem>
+              <cells>
+                <ObjectIdentifier title="{id}"/>
+                <Text text="{name}" />
+                <Text text="{description}" />
+                <Text text="{measureMent}" />
+                <HBox justifyContent="End">
+                  <Button icon="sap-icon://edit" press="handleEditIngredient"></Button>
+                  <Button icon="sap-icon://delete" press="handleDeleteIngredient"></Button>
+                </HBox>
+              </cells>
+            </ColumnListItem>
+          </items>
+        </Table>
+      </Page>
+</mvc:View>
+  
